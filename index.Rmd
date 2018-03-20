@@ -2,7 +2,7 @@
 title: "<strong> Change Detection in Social Networks</strong>"
 subtitle: "<strong> Social Networks Analyze and Statistical Process Control </strong>"
 author: " <strong> Ian McCulloh, Matthew Webb, John Graham </strong>  </br> U.S. Military Academy </br> <strong>  Kathleen Carley </strong> </br> Carnegie Mellon University </br> <strong> Daniel B. Horn  </strong> </br> U.S. Army Research Institute"
-date: "`r format(Sys.Date(), ' %m %d th / %Y')`"
+date: "`r format(Sys.Date(), ' %m / %d / %Y')`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
