@@ -1,0 +1,162 @@
+---
+title: "<strong> Change Detection in Social Networks</strong>"
+subtitle: "<strong> Social Networks Analyze and Statistical Process Control </strong>"
+author: " <strong> MAJ Ian McCulloh, 2LT Matthew Webb, LTC John Graham </strong>  </br> U.S. Military Academy </br> <strong>  Kathleen Carley </strong> </br> Carnegie Mellon University </br> <strong> Daniel B. Horn  </strong> </br> U.S. Army Research Institute"
+date: "`r format(Sys.Date(), ' %d / %m / %Y')`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      css: [hygge, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle
+
+![](http://www.bienestar.unal.edu.co/wp-content/uploads/2017/04/unal-700x300.png)
+
+## Submitted by:
+
+### Hernán David Torres Cardona
+
+## Professor:
+
+### Rubén Darío Guevara
+
+---
+class: inverse, center, middle
+
+# Introduction
+
+---
+
+# Social Networks Analysis: Research Requirement
+
+Social networks may signal change within an
+organization, and may even predict significant events or behaviors.
+
+--
+
+Detect these changes enables 
+
+* the anticipation and early warning of change and
+* faster response to change.
+
+--
+
+### _*Procedure:*_
+By applying **Statistical Process Control** techniques 
+to social networks we can detect these changes.
+
+.footnote[
+[1] McCulloh, I., Webb, M., Graham, J., Carley, K., & Horn, D. B. (2008). Change detection in social networks. Military Academy Dept Mathematical sciences. [PDF](http://www.dtic.mil/get-tr-doc/pdf?AD=ADA484611)
+]
+
+---
+background-image: url(http://www.casos.cs.cmu.edu/projects/nukes/nukes.png)
+background-size: 500px 500px
+
+class: center, bottom, inverse
+
+# [A Twitter retweet!](http://www.casos.cs.cmu.edu/projects/projects/hashtag_nukes.php)
+
+---
+
+# Organizations are not static
+
+Their structure, composition, and patterns of
+communication may change over time.
+
+--
+
+A certain degree of change is expected in the normal course of an unchanging organization.
+
+--
+
+### _*The challenge:*_
+Develope metrics to detect signals of meaningful change in social networks in a background of normal variability.
+
+
+---
+# Social Network Change Detection
+
+Previous methods may be effective at quantifying a difference in static networks, **but** they lack an underlying statistical distribution.
+
+--
+Now we want to improve  significantly on previous attempts to detect organizational change over time.
+
+--
+
+### _*In what way?*_
+
+By introducing a statistically sound probability space and uniformly more powerful detection methods we prevent an analyst from identifying a statiscally significant change.
+
+--
+
+We propose techniques from SNA [2], combined with those from statistical process control.
+
+.footnote[
+[2] SNA: Social Networks Analysis
+]
+
+---
+class: inverse, middle, center
+
+#  Social Network Analysis
+
+---
+
+# Social Network Analysis
+
+---
+
+# remark.js vs xaringan
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;<sup>*</sup>
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).

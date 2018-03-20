@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Change Detection in Social Networks</title>
+    <meta charset="utf-8">
+    <meta name="author" content=" MAJ Ian McCulloh, 2LT Matthew Webb, LTC John Graham   U.S. Military Academy   Kathleen Carley   Carnegie Mellon University   Daniel B. Horn   U.S. Army Research Institute" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# <strong> Change Detection in Social Networks</strong>
+## <strong> Social Networks Analyze and Statistical Process Control </strong>
+### <strong> MAJ Ian McCulloh, 2LT Matthew Webb, LTC John Graham </strong> </br> U.S. Military Academy </br> <strong> Kathleen Carley </strong> </br> Carnegie Mellon University </br> <strong> Daniel B. Horn </strong> </br> U.S. Army Research Institute
+### 19 / 03 / 2018
+
+---
+
+
+
+
+class: center, middle
+
+![](http://www.bienestar.unal.edu.co/wp-content/uploads/2017/04/unal-700x300.png)
+
+## Submitted by:
+
+### Hernán David Torres Cardona
+
+## Professor:
+
+### Rubén Darío Guevara
+
+---
+class: inverse, center, middle
+
+# Introduction
+
+---
+
+# Social Networks Analysis: Research Requirement
+
+Social networks may signal change within an
+organization, and may even predict significant events or behaviors.
+
+--
+
+Detect these changes enables 
+
+* the anticipation and early warning of change and
+* faster response to change.
+
+--
+
+### _*Procedure:*_
+By applying **Statistical Process Control** techniques 
+to social networks we can detect these changes.
+
+.footnote[
+[1] McCulloh, I., Webb, M., Graham, J., Carley, K., &amp; Horn, D. B. (2008). Change detection in social networks. Military Academy Dept Mathematical sciences. [PDF](http://www.dtic.mil/get-tr-doc/pdf?AD=ADA484611)
+]
+
+---
+background-image: url(http://www.casos.cs.cmu.edu/projects/nukes/nukes.png)
+background-size: 500px 500px
+
+class: center, bottom, inverse
+
+# [A Twitter retweet!](http://www.casos.cs.cmu.edu/projects/projects/hashtag_nukes.php)
+
+---
+
+# Organizations are not static
+
+Their structure, composition, and patterns of
+communication may change over time.
+
+--
+
+A certain degree of change is expected in the normal course of an unchanging organization.
+
+--
+
+### _*The challenge:*_
+Develope metrics to detect signals of meaningful change in social networks in a background of normal variability.
+
+
+---
+# Social Network Change Detection
+
+Previous methods may be effective at quantifying a difference in static networks, **but** they lack an underlying statistical distribution.
+
+--
+Now we want to improve  significantly on previous attempts to detect organizational change over time.
+
+--
+
+### _*In what way?*_
+
+By introducing a statistically sound probability space and uniformly more powerful detection methods we prevent an analyst from identifying a statiscally significant change.
+
+--
+
+We propose techniques from SNA [2], combined with those from statistical process control.
+
+.footnote[
+[2] SNA: Social Networks Analysis
+]
+
+---
+class: inverse, middle, center
+
+#  Social Network Analysis
+
+---
+
+# Social Network Analysis
+
+---
+
+# remark.js vs xaringan
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;&lt;sup&gt;*&lt;/sup&gt;
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"css": ["hygge", "metropolis", "metropolis-fonts"]
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
