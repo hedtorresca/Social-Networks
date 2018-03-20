@@ -3,7 +3,7 @@
   <head>
     <title> Change Detection in Social Networks</title>
     <meta charset="utf-8">
-    <meta name="author" content=" MAJ Ian McCulloh, 2LT Matthew Webb, LTC John Graham   U.S. Military Academy   Kathleen Carley   Carnegie Mellon University   Daniel B. Horn   U.S. Army Research Institute" />
+    <meta name="author" content=" Ian McCulloh, Matthew Webb, John Graham   U.S. Military Academy   Kathleen Carley   Carnegie Mellon University   Daniel B. Horn   U.S. Army Research Institute" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
   </head>
@@ -13,8 +13,8 @@ class: center, middle, inverse, title-slide
 
 # <strong> Change Detection in Social Networks</strong>
 ## <strong> Social Networks Analyze and Statistical Process Control </strong>
-### <strong> MAJ Ian McCulloh, 2LT Matthew Webb, LTC John Graham </strong> </br> U.S. Military Academy </br> <strong> Kathleen Carley </strong> </br> Carnegie Mellon University </br> <strong> Daniel B. Horn </strong> </br> U.S. Army Research Institute
-### 19 / 03 / 2018
+### <strong> Ian McCulloh, Matthew Webb, John Graham </strong> </br> U.S. Military Academy </br> <strong> Kathleen Carley </strong> </br> Carnegie Mellon University </br> <strong> Daniel B. Horn </strong> </br> U.S. Army Research Institute
+### 03 20 th / 2018
 
 ---
 
@@ -25,11 +25,11 @@ class: center, middle
 
 ![](http://www.bienestar.unal.edu.co/wp-content/uploads/2017/04/unal-700x300.png)
 
-## Submitted by:
+## **Submitted by:**
 
 ### Hernán David Torres Cardona
 
-## Professor:
+## **Professor:**
 
 ### Rubén Darío Guevara
 
@@ -42,29 +42,32 @@ class: inverse, center, middle
 
 # Social Networks Analysis: Research Requirement
 
-Social networks may signal change within an
-organization, and may even predict significant events or behaviors.
-
---
-
-Detect these changes enables 
-
-* the anticipation and early warning of change and
-* faster response to change.
-
---
-
-### _*Procedure:*_
-By applying **Statistical Process Control** techniques 
-to social networks we can detect these changes.
+**Social networks** may signal **change** within an organization, and may even **predict** significant events or behaviors.
 
 .footnote[
 [1] McCulloh, I., Webb, M., Graham, J., Carley, K., &amp; Horn, D. B. (2008). Change detection in social networks. Military Academy Dept Mathematical sciences. [PDF](http://www.dtic.mil/get-tr-doc/pdf?AD=ADA484611)
 ]
 
+--
+
+Detect these changes enables 
+
+* the **anticipation** and early **warning** of change and
+* faster **response** to change.
+
+--
+
+### _*Procedure*_
+
+By applying **Statistical Process Control** techniques 
+to social networks we can detect these changes.
+
+
+
 ---
+
 background-image: url(http://www.casos.cs.cmu.edu/projects/nukes/nukes.png)
-background-size: 500px 500px
+background-size: 650px 550px
 
 class: center, bottom, inverse
 
@@ -74,39 +77,44 @@ class: center, bottom, inverse
 
 # Organizations are not static
 
-Their structure, composition, and patterns of
-communication may change over time.
+Their structure, composition, and patterns of communication may change **over time**.
 
 --
 
-A certain degree of change is expected in the normal course of an unchanging organization.
+A certain degree of change is expected in the **normal course** of an unchanging organization.
 
 --
 
-### _*The challenge:*_
-Develope metrics to detect signals of meaningful change in social networks in a background of normal variability.
+### _*The challenge*_
+Develope metrics to detect **signals of meaningful change** in social networks in a background of normal variability.
 
 
 ---
+
 # Social Network Change Detection
 
-Previous methods may be effective at quantifying a difference in static networks, **but** they lack an underlying statistical distribution.
+Previous methods may be effective at quantifying a difference in static networks, **but** they lack an underlying **statistical distribution**.
 
 --
-Now we want to improve  significantly on previous attempts to detect organizational change over time.
+
+Now we want to improve significantly on previous attempts to detect organizational change over time.
+
 
 --
+
 
 ### _*In what way?*_
 
-By introducing a statistically sound probability space and uniformly more powerful detection methods we prevent an analyst from identifying a statiscally significant change.
+By introducing a statistically sound **probability space** and uniformly more powerful **detection methods¨** we prevent an analyst from identifying a statiscally significant change.
 
 --
 
-We propose techniques from SNA [2], combined with those from statistical process control.
+We propose techniques from _*SNA**_, combined with those from _*SPC*_**.
 
 .footnote[
-[2] SNA: Social Networks Analysis
+[*] SNA: Social Networks Analysis
+
+[**] SPC: Statistical Process Control
 ]
 
 ---
@@ -116,54 +124,268 @@ class: inverse, middle, center
 
 ---
 
-# Social Network Analysis
+# Graphs
+
+
+SNA provides the basis for how social networks are modeled, measured, compared and visualized. 
+
+
+&lt;center&gt;&lt;iframe src="https://giphy.com/embed/b8032T9vBcIak" width="330" height="230" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+--
+
++ An **observed social network** can be modeled on a graph with people represented as **vertices** and links between them as **edges**. [1] 
+
+.footnote[[1] (Scott, 2002; Wasserman &amp; Faust, 1994) ]
+
+--
+
++ Edges may be weighted to show the importance of the link or may be directed to show who is initiating the link and who is receiving it. 
+
+
 
 ---
 
-# remark.js vs xaringan
+# Centrality Network Measures
 
-Some differences between using remark.js (left) and using **xaringan** (right):
+Network measures can be calculated from the entire graph (**extrinsic attributes**) or for each individual node (**intrinsic attributes**).
 
+--
 .pull-left[
-1. Start with a boilerplate HTML file;
 
-1. Plain Markdown;
+**Density**
 
-1. Write JavaScript to autoplay slides;
+How many links exist in the graph divided by the total number of possible links.
 
-1. Manually configure MathJax;
+$$ d = \frac{\text{# edges}}{n(n-1)}$$
+--
 
-1. Highlight code with `*`;
+**Closeness centrality**
 
-1. Edit Markdown source and refresh browser to see updated slides;
+How a node is connected beyond its immediate neighbors.
+
+`$$c_k = \frac{\min_k\{\sum_{i=1}^n g_{ki}\}}{\sum_{i=1}^n g_{ki}}$$`
+
 ]
+
+--
 
 .pull-right[
-1. Start with an R Markdown document;
+**Betweenness centrality**
 
-1. R Markdown (can embed R/other code chunks);
+How often a node lies along the shortest path, or geodesic, between two other nodes for all nodes in a graph.
 
-1. Provide an option `autoplay`;
+`$$b_k = \sum _{i,j} \frac{g_{ikj}}{g_{ij}}$$`
++ `\(g_{ikj}\)`: the number of geodesic paths between nodes i and j crossing node k.
 
-1. MathJax just works;&lt;sup&gt;*&lt;/sup&gt;
++ `\(g_{ij}\)`: total number of geodesic paths between nodes i and j.
 
-1. Highlight code with `{{}}`;
-
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
 ]
 
-.footnote[[*] Not really. See next page.]
+
+
+---
+class: inverse, middle, center
+
+# Statistical Process Control
+
+---
+
+# Control charts
+
+SPC is a technique used mostly to monitor industrial processes.
+
+--
+
+These detect changes in the **mean** of the process by taking periodic samples of the product and tracking the results against a **control limit**.
+
+--
+
+Control charts are usually optimized for their processes to increase their sensitivity for detecting changes, while minimizing the number of **false alarms**.
+
+---
+# CUSUM* Control Chart
+
+The decision rule runs off the cumulative statistic
+
+`$$C_t = \sum_{j=1}^t (Z_i - k)$$`
+
+.footnote[[*] Cumulative Sum]
+
+--
+
+where `\(Z_i\)` is the standardized normal of each observation and the common choice for `\(k\)` is 0.5
+
+
+--
+
+This chart is well suited:
+
+--
+.pull-left[+ To detect small changes in the mean of a process over time.]
+
+--
+
+.pull-right[+ To found its built-in change point detection]
+
+---
+class: inverse, middle, center
+
+# Methods and Result
+
+---
+ 
+ # Graph mesures
+
+The average graph measures for
+**density**, **closeness**, and **betweenness centrality** are calculated for several consecutive time periods of the social network.
+
+--
+
++ The **“in-control” mean and variance** for the measures of the network are calculated by taking a sample average and sample variance of the **stabilized measures**.
+
+--
+
+
++ The subsequent, successive social network measures are then used to calculate the CUSUM’s statistics.
+
+--
+
+
++ Upon receiving a signal, the *change point** is calculated by tracing the signaling `\(C^+\)` or `\(C^-\)` statistic back to the last time period it was zero.
+
+---
+
+#Network mesures
+
+The network measures of interest should follow or approximate a normal distribution due to the central limit theorem.
+
+--
+
+Each of the network measures was fit with five continuous distributions: normal, uniform, gamma, exponential, and chi-squared.
+
+--
+
+### _*The Problem*_
+Gamma Distribution is the best fit for betweenness and density network
+measures. This invalidated further usage of the CUSUM Control
+Chart.
+
+---
+
+# Tactical Officer Eduaction Program
+
+The TOEP officers agreed to allow data about their personal and professional e-mail communication to be tracked over a 24-week period.
+
+--
+
+There were subjects with incomplete communication and not identically distributed data collected . These were eliminated from further examination.
+
+&lt;p align="center"&gt;
+  &lt;img width="400" height="400" src="NetworkToep.png"&gt;
+&lt;/p&gt;
+---
+
+## Normally distributed but too much variance
+
+The planning calendar, combined with participant interviews, allowed investigators to determine the number of significant events from a variety of categories that occurred each week: 
+
++ Academic Requirements
++ The Next Week’s Academic Requirements
++ Administrative Events
++ Group Projects + Social Gatherings
++ Days Off.
+
+--
+
+_*Analysis of variance (ANOVA)*_
+
+`$$\text{Closeness} = 0.18 − 0.11(\text{Group Projects} ) + 0.11(\text{Social Gatherings}) + 0.0074(\text{Number of Emails})$$`
+&lt;p align="center"&gt;
+  &lt;img width="430" height="200" src="Captura2.png"&gt;
+&lt;/p&gt;
+
+---
+
+##  Closeness CUSUM
+
+When is the model no longer providing a good prediction?
+
+--
+
+The `\(C_+\)` and `\(C_-\)` statistics were calculated for each week using a `\(k\)` value of 0.5 and a control limit of 3.
+
+&lt;p align="center"&gt;
+  &lt;img width="600" height="300" src="Captura3.png"&gt;
+&lt;/p&gt;
+
+---
+
+## Summary
+
+&lt;p align="center"&gt;
+  &lt;img width="560" height="300" src="Captura4.png"&gt;
+&lt;/p&gt;
+--
+
+**Notices:**
+
++ An increase in group project work was correlated with a decrease in communication.
+
++ The residuals were verified as normally distributed to meet the prerequisites of the CUSUM Control Chart.
+
+---
+
+# Al-Qaeda Communications Network
+
+The data are limited in that we do not know the type, frequency, or substance of the communication and all links are non-directional.
+
+&lt;p align="center"&gt;
+  &lt;img width="500" height="450" src="Captura5.png"&gt;
+&lt;/p&gt;
 
 
 ---
 
-class: center, middle
+## Averages for mesures
+
+&lt;p align="center"&gt;
+  &lt;img width="550" height="300" src="Captura6.png"&gt;
+&lt;/p&gt;
+
+--
+
+**Notices**
+
++ There might be a significant change in the al-Qaeda network between the years 2000
+and 2001. 
+
++ We would be alerted to a critical  change in the network prior to the September 11 terrorist attacks.
+
+---
+class: inverse, middle, center
+
+# Conclusions
+
+---
+
+# Discussion and further work
+
++ Social network
+monitoring can to detect important changes in the monitored communication of both command and control networks as well as terrorist networks.
+
++ Several difficulties were encountered when working with the datasets, for example, the completeness of the dataset.
+
++ Future research should focus on near-complete datasets with high resolution.
+
++ Networks with a set of good
+predictors to explain varying behavior may be useful in  producing models that can be control charted.
+---
+class: center, middle, inverse
 
 # Thanks!
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
