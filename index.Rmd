@@ -298,7 +298,7 @@ _*Analysis of variance (ANOVA)*_
 
 $$\text{Closeness} = 0.18 − 0.11(\text{Group Projects} ) + 0.11(\text{Social Gatherings}) + 0.0074(\text{Number of Emails})$$
 <p align="center">
-  <img width="430" height="200" src="Captura2.png">
+  <img width="430" height="200" src="Captura2.PNG">
 </p>
 
 ---
@@ -312,7 +312,7 @@ When is the model no longer providing a good prediction?
 The $C_+$ and $C_-$ statistics were calculated for each week using a $k$ value of 0.5 and a control limit of 3.
 
 <p align="center">
-  <img width="600" height="300" src="Captura3.png">
+  <img width="600" height="300" src="Captura3.PNG">
 </p>
 
 ---
@@ -320,7 +320,7 @@ The $C_+$ and $C_-$ statistics were calculated for each week using a $k$ value o
 ## Summary
 
 <p align="center">
-  <img width="560" height="300" src="Captura4.png">
+  <img width="560" height="300" src="Captura4.PNG">
 </p>
 --
 
@@ -337,7 +337,7 @@ The $C_+$ and $C_-$ statistics were calculated for each week using a $k$ value o
 The data are limited in that we do not know the type, frequency, or substance of the communication and all links are non-directional.
 
 <p align="center">
-  <img width="500" height="450" src="Captura5.png">
+  <img width="500" height="450" src="Captura5.PNG">
 </p>
 
 
@@ -346,7 +346,7 @@ The data are limited in that we do not know the type, frequency, or substance of
 ## Averages for mesures
 
 <p align="center">
-  <img width="550" height="300" src="Captura6.png">
+  <img width="550" height="300" src="Captura6.PNG">
 </p>
 
 --
