@@ -178,7 +178,30 @@ $$b_k = \sum _{i,j} \frac{g_{ikj}}{g_{ij}}$$
 
 ]
 
+---
+# What is a Meta-Network?
 
++ **Meta-Network** – A representation of a Group of Networks.
+
+--
+
++ **Node** – A representation of a real-world item (a who, what, where, how, why item).
+
+--
+
++ **Node Class** – A set of nodes of one type.
+
+--
+
++ **Link** – A representation of a tie, edge, connection, or relation link between any two nodes.
+
+--
+
++ **Network** – A representation of a set of nodes (including meta-nodes) of one type and the links (including meta-links) of one type between them.
+
+--
+
++ **Attribute** – Additional information about a node.  
 
 ---
 class: inverse, middle, center
@@ -381,5 +404,5 @@ class: center, middle, inverse
 
 # Thanks!
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+Slides created via the R package **xaringan**.
 
