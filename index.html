@@ -12,9 +12,9 @@
 class: center, middle, inverse, title-slide
 
 # <strong> Change Detection in Social Networks</strong>
-## <strong> Social Networks Analyze and Statistical Process Control </strong>
+## <strong> Social Networks Analysis and Statistical Process Control </strong>
 ### <strong> Ian McCulloh, Matthew Webb, John Graham </strong> </br> U.S. Military Academy </br> <strong> Kathleen Carley </strong> </br> Carnegie Mellon University </br> <strong> Daniel B. Horn </strong> </br> U.S. Army Research Institute
-### 03 / 20 / 2018
+### 05 / 17 / 2018
 
 ---
 
@@ -40,9 +40,10 @@ class: inverse, center, middle
 
 ---
 
-# Social Networks Analysis: Research Requirement
+# Social Networks Analysis 
+## Research Requirement
 
-**Social networks** may signal **change** within an organization, and may even **predict** significant events or behaviors.
+### **Social networks analysis** may signal **change** within an organization and **predict** significant events or behaviors.
 
 .footnote[
 [1] McCulloh, I., Webb, M., Graham, J., Carley, K., &amp; Horn, D. B. (2008). Change detection in social networks. Military Academy Dept Mathematical sciences. [PDF](http://www.dtic.mil/get-tr-doc/pdf?AD=ADA484611)
@@ -50,71 +51,78 @@ class: inverse, center, middle
 
 --
 
-Detect these changes enables 
+### Detect these changes enables 
 
-* the **anticipation** and early **warning** of change and
-* faster **response** to change.
+--
+- ###  the **anticipation** and early **warning** of change and
 
 --
 
-### _*Procedure*_
+- ###  **faster response** to change
 
-By applying **Statistical Process Control** techniques 
-to social networks we can detect these changes.
+
 
 
 
 ---
 
 background-image: url(http://www.casos.cs.cmu.edu/projects/nukes/nukes.png)
-background-size: 650px 550px
+background-size: 650px 590px
 
 class: center, bottom, inverse
 
-# [A Twitter retweet!](http://www.casos.cs.cmu.edu/projects/projects/hashtag_nukes.php)
+# A Twitter retweet!
 
 ---
 
 # Organizations are not static
+## The challenge
 
-Their structure, composition, and patterns of communication may change **over time**.
-
---
-
-A certain degree of change is expected in the **normal course** of an unchanging organization.
+- ### Their structure, composition, and patterns of communication may change **over time**.
 
 --
 
-### _*The challenge*_
-Develope metrics to detect **signals of meaningful change** in social networks in a background of normal variability.
+- ### A certain degree of change is expected in the **normal course** of an unchanging organization.
+
+--
+
+- ### Develope metrics to detect **signals of meaningful change** in a background of normal variability.
 
 
 ---
 
 # Social Network Change Detection
+## Overview
+### Previous methods may be effective at quantifying a difference in static networks, **but** they lack an underlying **statistical distribution**.
+ 
+ ### **Examples**
+ 
+ - ### Hamming distance: Error detector and corrector codes
+ - ### Euclidean distance: Weighted networks
+ - ### Exponential Random Graph Models: Metrics and statistical models describe structural changes
 
-Previous methods may be effective at quantifying a difference in static networks, **but** they lack an underlying **statistical distribution**.
-
---
-
-Now we want to improve significantly on previous attempts to detect organizational change over time.
-
-
---
-
-
-### _*In what way?*_
-
-By introducing a statistically sound **probability space** and uniformly more powerful **detection methods¨** we prevent an analyst from identifying a statiscally significant change.
+---
+# Social Network Change Detection
+## Now and in what way?
 
 --
 
-We propose techniques from _*SNA**_, combined with those from _*SPC*_**.
+### Improving significantly on previous attempts to detect organizational change **over time**.
+
+
+--
+
+
+### Introducing a statistically sound **probability space** and uniformly more powerful **detection methods¨** 
+
+--
+
+### Techniques from _*SNA*_, combined with those from _*SPC*_.
 
 .footnote[
-[*] SNA: Social Networks Analysis
+SNA: Social Networks Analysis
 
-[**] SPC: Statistical Process Control
+SPC: Statistical Process Control
 ]
 
 ---
@@ -126,86 +134,118 @@ class: inverse, middle, center
 
 # Graphs
 
-
-SNA provides the basis for how social networks are modeled, measured, compared and visualized. 
+--
+### SNA provides the basis for how social networks are modeled, measured, compared and visualized. 
 
 
 &lt;center&gt;&lt;iframe src="https://giphy.com/embed/b8032T9vBcIak" width="330" height="230" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/center&gt;
 
 --
 
-+ An **observed social network** can be modeled on a graph with people represented as **vertices** and links between them as **edges**. [1] 
++ ### An **observed social network** can be modeled on a graph with **nodes** and links between them as **edges**. [1] 
 
 .footnote[[1] (Scott, 2002; Wasserman &amp; Faust, 1994) ]
 
 --
-
-+ Edges may be weighted to show the importance of the link or may be directed to show who is initiating the link and who is receiving it. 
+ 
 
 
 
 ---
 
-# Centrality Network Measures
-
-Network measures can be calculated from the entire graph (**extrinsic attributes**) or for each individual node (**intrinsic attributes**).
+# Network Measures
 
 --
-.pull-left[
+### Network measures can be calculated 
 
-**Density**
+--
+- ### **from the entire graph (_extrinsic attributes_) or **
 
-How many links exist in the graph divided by the total number of possible links.
+
+--
+
+- ### for each individual node (_intrinsic attributes_).
+
+---
+# Network Measures
+## Extrinsic Attributes
+
+### **Density**
+
+### How many links exist in the graph divided by the total number of possible links.
 
 $$ d = \frac{\text{# edges}}{n(n-1)}$$
---
+---
+background-image: url(https://community.toadworld.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-00-70/Comunidades.JPG)
+background-size: 650px 600px
 
-**Closeness centrality**
+class: center, bottom, inverse
 
-How a node is connected beyond its immediate neighbors.
+# Density
 
-`$$c_k = \frac{\min_k\{\sum_{i=1}^n g_{ki}\}}{\sum_{i=1}^n g_{ki}}$$`
+---
 
-]
+# Centrality Network Measures
+## Extrinsic Attributes
 
---
+###**Closeness centrality**
 
-.pull-right[
-**Betweenness centrality**
+### How a node is connected beyond its immediate neighbors.
 
-How often a node lies along the shortest path, or geodesic, between two other nodes for all nodes in a graph.
+`$$c_k = \frac{\min_k\{\sum_{i=1}^n g_{ki}\}}{\sum_{i=1}^n g_{ki}}$$`  
++ `\(g_{ik}\)`: the number of geodesic paths between nodes i and j.
+---
+background-image: url(untitled.png)
+background-size: 650px 600px
+
+class: center, bottom, inverse
+
+# Closeness centrality
+---
+
+# Centrality Network Measures
+## Extrinsic Attributes
+
+### **Betweenness centrality**
+
+### How often a node lies along the shortest path, or geodesic, between two other nodes for all nodes in a graph.
 
 `$$b_k = \sum _{i,j} \frac{g_{ikj}}{g_{ij}}$$`
 + `\(g_{ikj}\)`: the number of geodesic paths between nodes i and j crossing node k.
 
 + `\(g_{ij}\)`: total number of geodesic paths between nodes i and j.
-
-]
-
 ---
+background-image: url(untitled2.png)
+background-size: 650px 600px
+
+class: center, bottom, inverse
+
+# Betweenness centrality
+---
+
 # What is a Meta-Network?
 
-+ **Meta-Network** – A representation of a Group of Networks.
++ ### **Meta-Network** – A representation of a Group of Networks.
 
 --
 
-+ **Node** – A representation of a real-world item (a who, what, where, how, why item).
++ ### **Node** – A representation of a real-world item (a who, what, where, how, why item).
 
 --
 
-+ **Node Class** – A set of nodes of one type.
++ ### **Node Class** – A set of nodes of one type.
 
 --
 
-+ **Link** – A representation of a tie, edge, connection, or relation link between any two nodes.
++ ### **Link** – A representation of a tie, edge, connection, or relation link between any two nodes.
 
 --
 
-+ **Network** – A representation of a set of nodes (including meta-nodes) of one type and the links (including meta-links) of one type between them.
++ ### **Network** – A representation of a set of nodes of one type and the links of one type between them.
 
 --
 
-+ **Attribute** – Additional information about a node.  
++ ### **Attribute** – Additional information about a node.  
 
 ---
 class: inverse, middle, center
@@ -216,20 +256,20 @@ class: inverse, middle, center
 
 # Control charts
 
-SPC is a technique used mostly to monitor industrial processes.
+### SPC is a technique used mostly to monitor industrial processes.
 
 --
 
-These detect changes in the **mean** of the process by taking periodic samples of the product and tracking the results against a **control limit**.
+### These detect changes in the **mean** of the process by taking periodic samples of the product and tracking the results against a **control limit**.
 
 --
 
-Control charts are usually optimized for their processes to increase their sensitivity for detecting changes, while minimizing the number of **false alarms**.
+### Control charts are usually optimized for their processes to increase their sensitivity for detecting changes, while minimizing the number of **false alarms**.
 
 ---
 # CUSUM* Control Chart
 
-The decision rule runs off the cumulative statistic
+### The **decision rule** runs off the cumulative statistic
 
 `$$C_t = \sum_{j=1}^t (Z_i - k)$$`
 
@@ -237,21 +277,22 @@ The decision rule runs off the cumulative statistic
 
 --
 
-where `\(Z_i\)` is the standardized normal of each observation and the common choice for `\(k\)` is 0.5
+#### where `\(Z_i\)` is the standardized normal of each observation and the common choice for `\(k\)` is 0.5
 
 
 --
 
-This chart is well suited:
+### This chart is well suited:
 
 --
-.pull-left[+ To detect small changes in the mean of a process over time.]
++ ### To detect small changes in the mean of a process over time.
 
 --
 
-.pull-right[+ To found its built-in change point detection]
++ ### To found its built-in change point detection
 
 ---
+
 class: inverse, middle, center
 
 # Methods and Result
@@ -260,83 +301,81 @@ class: inverse, middle, center
  
  # Graph mesures
 
-The average graph measures for
-**density**, **closeness**, and **betweenness centrality** are calculated for several consecutive time periods of the social network.
+### The average graph measures for **density**, **closeness**, and **betweenness centrality** are calculated for several consecutive time periods of the social network.
 
 --
 
-+ The **“in-control” mean and variance** for the measures of the network are calculated by taking a sample average and sample variance of the **stabilized measures**.
-
---
-
-
-+ The subsequent, successive social network measures are then used to calculate the CUSUM’s statistics.
++ ### The **“in-control” mean and variance** for the measures of the network are calculated by taking a sample average and sample variance of the **stabilized measures**.
 
 --
 
 
-+ Upon receiving a signal, the *change point** is calculated by tracing the signaling `\(C^+\)` or `\(C^-\)` statistic back to the last time period it was zero.
++ ### The subsequent, successive social network measures are then used to calculate the CUSUM’s statistics.
+
+--
+
+
++ ### Upon receiving a signal, the **change point** is calculated by tracing the signaling statistic back to the last time period it was zero.
 
 ---
 
-#Network mesures
+# Network mesures
 
-The network measures of interest should follow or approximate a normal distribution due to the central limit theorem.
-
---
-
-Each of the network measures was fit with five continuous distributions: normal, uniform, gamma, exponential, and chi-squared.
++ ### Network measures of interest should follow or approximate a **normal distribution** due to the central limit theorem.
 
 --
 
-### _*The Problem*_
-Gamma Distribution is the best fit for betweenness and density network
-measures. This invalidated further usage of the CUSUM Control
-Chart.
++ ### Each of the network measures was fit with five **continuous distributions**: normal, uniform, gamma, exponential, and chi-squared.
+
+--
+
++ ### **Gamma Distribution** is the best fit for betweenness and density. This invalidated further usage of the **CUSUM Control Chart**.
 
 ---
 
 # Tactical Officer Eduaction Program
 
-The TOEP officers agreed to allow data about their personal and professional e-mail communication to be tracked over a 24-week period.
+#### The TOEP officers allow data about their personal and professional e-mail communication to be tracked over a 24-week period.
 
 --
 
-There were subjects with incomplete communication and not identically distributed data collected . These were eliminated from further examination.
+#### Subjects with incomplete communication and not identically distributed data collected were eliminated from further examination.
 
 &lt;p align="center"&gt;
   &lt;img width="400" height="400" src="NetworkToep.png"&gt;
 &lt;/p&gt;
+
+Graph made with the software ORA
 ---
 
-## Normally distributed but too much variance
+# Normally distributed but too much variance
 
-The planning calendar, combined with participant interviews, allowed investigators to determine the number of significant events from a variety of categories that occurred each week: 
+### The planning calendar and participant interviews allowed investigators significant events that occurred each week: 
 
-+ Academic Requirements
-+ The Next Week’s Academic Requirements
-+ Administrative Events
-+ Group Projects + Social Gatherings
-+ Days Off.
++ #### Academic Requirements
++ #### The Next Week’s Academic Requirements
++ #### Administrative Events
++ #### Group Projects + Social Gatherings
++ #### Days Off.
 
---
-
-_*Analysis of variance (ANOVA)*_
+---
+# Normally distributed but too much variance
+### **Analysis of variance (ANOVA)**
 
 `$$\text{Closeness} = 0.18 − 0.11(\text{Group Projects} ) + 0.11(\text{Social Gatherings}) + 0.0074(\text{Number of Emails})$$`
 &lt;p align="center"&gt;
-  &lt;img width="430" height="200" src="Captura2.PNG"&gt;
+  &lt;img width="470" height="200" src="Captura2.PNG"&gt;
 &lt;/p&gt;
 
 ---
 
 ##  Closeness CUSUM
 
-When is the model no longer providing a good prediction?
+#### When is the model no longer providing a good prediction?
 
 --
 
-The `\(C_+\)` and `\(C_-\)` statistics were calculated for each week using a `\(k\)` value of 0.5 and a control limit of 3.
+#### The `\(C_+\)` and `\(C_-\)` statistics were calculated for each week using a `\(k\)` value of 0.5 and a control limit of 3.
 
 &lt;p align="center"&gt;
   &lt;img width="600" height="300" src="Captura3.PNG"&gt;
@@ -351,17 +390,17 @@ The `\(C_+\)` and `\(C_-\)` statistics were calculated for each week using a `\(
 &lt;/p&gt;
 --
 
-**Notices:**
+#### **Notices:**
 
-+ An increase in group project work was correlated with a decrease in communication.
++ #### An increase in group project work was **correlated** with a decrease in communication.
 
-+ The residuals were verified as normally distributed to meet the prerequisites of the CUSUM Control Chart.
++ #### The **residuals** were verified as normally distributed to meet the prerequisites of the CUSUM Control Chart.
 
 ---
 
 # Al-Qaeda Communications Network
 
-The data are limited in that we do not know the type, frequency, or substance of the communication and all links are non-directional.
+#### The data are limited in that we do not know the type, frequency, or substance of the communication and all links are non-directional.
 
 &lt;p align="center"&gt;
   &lt;img width="500" height="450" src="Captura5.PNG"&gt;
@@ -378,12 +417,11 @@ The data are limited in that we do not know the type, frequency, or substance of
 
 --
 
-**Notices**
+#### **Notices**
 
-+ There might be a significant change in the al-Qaeda network between the years 2000
-and 2001. 
++ #### There might be a significant change in the al-Qaeda network between the years 2000 and 2001. 
 
-+ We would be alerted to a critical  change in the network prior to the September 11 terrorist attacks.
++ #### We would be alerted to a critical  change in the network prior to the September 11 terrorist attacks.
 
 ---
 class: inverse, middle, center
@@ -394,15 +432,13 @@ class: inverse, middle, center
 
 # Discussion and further work
 
-+ Social network
-monitoring can to detect important changes in the monitored communication of both command and control networks as well as terrorist networks.
++ ## Social network monitoring can to detect important changes in the monitored communication of both command and control networks as well as **terrorist networks**.
 
-+ Several difficulties were encountered when working with the datasets, for example, the completeness of the dataset.
++ ### Several difficulties were encountered when working with the datasets, for example, the **completeness** of the dataset.
 
-+ Future research should focus on near-complete datasets with high resolution.
++ ### **Future research** should focus on near-complete datasets with high resolution.
 
-+ Networks with a set of good
-predictors to explain varying behavior may be useful in  producing models that can be control charted.
++ ### Networks with a set of good predictors to explain varying behavior may be useful in  producing models that can be **control charted**.
 ---
 class: center, middle, inverse
 
